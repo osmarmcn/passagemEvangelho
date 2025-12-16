@@ -1,9 +1,12 @@
-📖 Assistente de Planos de Estudo Bíblico
+
+
+## 📖 Assistente de Planos de Estudo Bíblico
 Aplicação web Full Stack que gera planos de estudo personalizados de 3 dias baseados em temas ou sentimentos.
 
 
-Tecnologias Utilizadas
-Backend
+## Tecnologias Utilizadas
+1.Backend:
+
 Node.js
 
 Express.js
@@ -12,7 +15,7 @@ TypeScript
 
 CORS
 
-Frontend
+2.Frontend:
 React
 
 TypeScript
@@ -26,10 +29,10 @@ npm
 
 ts-node
 
-Objetivo do projeto
--O usuário digita um tema e será exibido um plano com passagens bíblicas acompanhadas de ações práticas, que poderão ser seguidas durante um período de três dias.
+## Objetivo do projeto
+- O usuário digita um tema e será exibido um plano com passagens bíblicas acompanhadas de ações práticas, que poderão ser seguidas durante um período de três dias.
   
-Funcionalidas
+## Funcionalidas
 - Um campo de texto onde o usuário digita o tema.
 
 - Exibição de uma lista de passagens bíblicas de acordo com o tema informado.
@@ -37,7 +40,7 @@ Funcionalidas
 - Histórico de pesquisas realizadas.
 
 
-Estrutura do Projeto
+## Estrutura do Projeto
 text
 ```
 assistente-estudo/
