@@ -30,7 +30,6 @@ function App() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
 
-    // Validação no frontend
     if (!tema.trim()) {
       setError('Por favor, digite um tema ou sentimento.')
       return

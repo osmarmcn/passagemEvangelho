@@ -11,13 +11,13 @@ export function createPlan(req: Request, res: Response) {
       })
     }
 
-    const { tema } = req.body as Partial<CreatePlanRequest>;
+    const { tema } = req.body as Partial<CreatePlanRequest>
 
     
     if (!tema || typeof tema !== 'string' || tema.trim() === '') {
       return res.status(400).json({
         error: 'O campo tema é obrigatório e deve ser um texto.'
-      });
+      })
     }
 
     
@@ -42,7 +42,7 @@ export function createPlan(req: Request, res: Response) {
 export function getHistory(req: Request, res: Response) {
   try {
     const recentPlans = getRecentPlans();
-    return res.status(200).json(recentPlans);
+    return res.status(200).json(recentPlans)
   } catch (error) {
     console.error('Erro ao buscar histórico:', error);
     return res.status(500).json({

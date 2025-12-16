@@ -1,101 +1,65 @@
-
-📖 Assistente de Planos de Estudo Bíblico
-Aplicação web que gera planos de estudo de 3 dias baseados em temas ou sentimentos.
-🚀 Tecnologias Utilizadas
-Backend
-
-Node.js
-Express
-TypeScript
-CORS
-
-Frontend
-
-React
-TypeScript
-Axios
-CSS3
-
-📁 Estrutura do Projeto
-assistente-estudo/
+📖 Assistente de Planos de Estudo BíblicoAplicação web que gera planos de estudo de 3 dias baseados em temas ou sentimentos, com foco em organização de código e simplicidade.🚀 Tecnologias UtilizadasBackendNode.jsExpressTypeScriptCORSFrontendReactTypeScriptAxiosCSS3📁 Estrutura do ProjetoA estrutura segue o padrão de repositório unificado (monorepo simples), separando claramente o Backend e o Frontend:assistente-estudo/
 ├── backend/
 │   ├── src/
-│   │   ├── types/        # Definições de tipos
-│   │   ├── services/      # Lógica de negócio
-│   │   ├── controllers/   # Controladores das rotas
-│   │   ├── routes/        # Definição de rotas
-│   │   └── server.ts      # Servidor principal
+│   │   ├── types/          # Definições de tipos (interfaces)
+│   │   ├── services/       # Lógica de negócio (Mock da IA, Histórico)
+│   │   ├── controllers/    # Controladores das rotas
+│   │   ├── routes/         # Definição de rotas do Express
+│   │   └── server.ts       # Servidor principal (ponto de entrada)
+│   ├── package.json
+│   └── tsconfig.json
+├── frontend/
+│   ├── src/
+│   │   ├── services/       # Comunicação com API (Axios)
+│   │   ├── App.tsx         # Componente principal e UI (Simples e Contido)
+│   │   └── styles/App.css  # Estilos básicos e Mobile First
 │   └── package.json
-│
-└── frontend/
-    ├── src/
-    │   ├── services/      # Comunicação com API
-    │   ├── App.tsx        # Componente principal
-    │   └── App.css        # Estilos
-    └── package.json
-⚙️ Como Executar
-Pré-requisitos
+└── .gitignore
 
-Node.js instalado (versão 16+)
-NPM ou Yarn
-
-Backend
-bashcd backend
+⚙️ Como ExecutarPré-requisitosNode.js instalado (versão 16+)NPM ou Yarn1. BackendO servidor Node.js/Express deve ser iniciado primeiro.Bashcd backend
 npm install
 npm run dev
-O servidor estará rodando em http://localhost:3001
-Frontend
-bashcd frontend
+💡 O servidor estará rodando em http://localhost:3001 (ou a porta configurada no seu .env).2. FrontendO aplicativo React/TypeScript consome a API do backend.Bashcd frontend
 npm install
-npm start
-O aplicativo abrirá em http://localhost:3000
-🔌 API Endpoints
-POST /api/generate-plan
-Gera um novo plano de estudo.
-Request Body:
-json{
+npm run dev
+💡 O aplicativo abrirá automaticamente em http://localhost:3000.🔌 API EndpointsPOST /api/generate-planGera um novo plano de estudo e retorna o histórico atualizado.Request Body:JSON{
   "tema": "Ansiedade"
 }
-Response:
-json{
-  "id": "1234567890",
-  "tema": "Ansiedade",
-  "criadoEm": "2025-12-16T...",
-  "dias": [
+Response (Exemplo):JSON{
+  "plan": [
     {
       "dia": 1,
-      "versiculo": "Filipenses 4:6-7",
-      "resumo": "Não andem ansiosos...",
-      "tarefaPratica": "Escreva 3 coisas..."
+      "title": "Reflexão sobre Ansiedade",
+      "verse": "Filipenses 4:6-7",
+      "summary": "Foco na entrega das preocupações a Deus...",
+      "practicalTask": "Reserve 15 minutos para meditar..."
+    }
+    // ... dia 2 e dia 3
+  ],
+  "history": [
+    {
+      "id": "1234567890",
+      "theme": "Ansiedade",
+      "dateGenerated": "2025-12-16T...",
+      "plan": [ ... ]
     }
   ]
 }
+
 GET /api/history
+(Nota: Esta funcionalidade está integrada na resposta do POST, mas a rota pode ser usada para um retorno direto do histórico em memória.)
+
 Retorna os últimos 3 planos gerados.
+
 ✨ Funcionalidades
-
 ✅ Geração de planos personalizados por tema
-✅ Validação de entrada (mínimo 3 caracteres)
-✅ Histórico dos últimos 3 planos
-✅ Interface responsiva
-✅ Feedback visual de carregamento
-✅ Tratamento de erros
 
-🎯 Temas Suportados
+✅ Validação de entrada (campo não vazio)
 
-Ansiedade/Medo: Versículos de paz e conforto
-Gratidão: Salmos de louvor
-Liderança: Princípios de liderança servidora
-Outros: Plano genérico de crescimento espiritual
+✅ Histórico dos últimos 3 planos (armazenados em memória)
 
-👨‍💻 Desenvolvedor
-Projeto desenvolvido como teste técnico demonstrando habilidades em:
+✅ Interface responsiva (Mobile First)
 
-Desenvolvimento Full Stack
-TypeScript
-Arquitetura de Software
-Clean Code
-Validações e Tratamento de Erros
+✅ Feedback visual de carregamento e erro
 
-📄 Licença
-Este projeto foi desenvolvido para fins de avaliação técnica.
+✅ Uso de TypeScript em todo o Full Stack
