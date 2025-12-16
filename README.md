@@ -40,6 +40,7 @@ ts-node
 
 Estrutura do Projeto
 text
+```
 assistente-estudo/
 ├── backend/
 │   ├── src/
@@ -75,7 +76,7 @@ assistente-estudo/
 Como Executar
 Pré-requisitos
 Node.js versão 16+
-
+```
 npm ou yarn
 
 1. Backend
