@@ -44,26 +44,20 @@ text
 assistente-estudo/
 ├── backend/
 │   ├── src/
-│   │   ├── types/
-│   │   │   └── index.ts
-│   │   ├── data/
-│   │   │   └── studyPlans.ts
-│   │   ├── services/
-│   │   │   └── planService.ts
-│   │   ├── middleware/
-│   │   │   └── validation.ts
+│   │   ├── controllers/
+│   │   │   └── planController.ts
 │   │   ├── routes/
 │   │   │   └── planRoutes.ts
-│   │   ├── utils/
-│   │   │   └── logger.ts
+│   │   ├── services/
+│   │   │   └── planService.ts
+│   │   ├── types/
+│   │   │   └── plan.ts
 │   │   └── server.ts
 │   ├── package.json
 │   └── tsconfig.json
 │
 ├── frontend/
 │   ├── src/
-│   │   ├── types/
-│   │   │   └── index.ts
 │   │   ├── services/
 │   │   │   └── api.ts
 │   │   ├── App.tsx
